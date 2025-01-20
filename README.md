@@ -1,2 +1,2 @@
-# pathogens-portal-theme
-Hugo theme for pathogens portal
+# node-pathogens-portal-theme
+Hugo theme for node pathogens portal
