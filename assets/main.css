@@ -43,6 +43,9 @@ a.dark-blue:hover {
 .navbar .navbar-brand {
     max-width: 75%;
 }
+.navbar .navbar-nav.navbar-top {
+    margin-left: 1rem;
+  }
   
 @media (max-width: 263px) {
     .navbar .navbar-brand {
@@ -360,4 +363,16 @@ aside > h5 {
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 6px;
+  }
+
+  /* Search */
+/* search results area */
+#search-results {
+    font-size: 1.175em;
+    background-color: rgba(229, 229, 229, 0.5);
+  }
+  #search-results a:hover {
+    font-size: 1.01em;
+    transition: 0.1s;
+    text-decoration: none;
   }
