@@ -52,8 +52,8 @@
         </div>
         <div class="row px-2">
             <div class="border p-3" id="news-items-container">
-            {{ $updates := where .Site.RegularPages "Section" "updates" }}
-            {{ range $index, $el := first 3 $updates }}
+            {{ $news := where .Site.RegularPages "Section" "news" }}
+            {{ range $index, $el := first 3 $news }}
             <div>
                 <div class="small text-muted">{{ .Date.Format "2006-01-02" }}</div>
                 <div><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
@@ -63,7 +63,7 @@
             </div> {{ end }}
             {{ end }}
             <div class="mt-3 bg-see-all-link">
-                <a class="dark-blue" href="/updates/">See all Portal news <i class="bi bi-arrow-right-square-fill"></i></a>
+                <a class="dark-blue" href="/news/">See all Portal news <i class="bi bi-arrow-right-square-fill"></i></a>
             </div>
             </div>
         </div>

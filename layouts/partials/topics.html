@@ -4,7 +4,7 @@
         <div class="bg-card">
           <figure class="figure" aria-hidden="true">
             <img class="topics-image figure-img" alt="{{ .Title }}"
-              src="{{ with .Page.Params.banner }}{{ . }}{{ else }}{{ "/img/topic_covid.jpg" }}{{ end }}">
+              src="{{ with .Page.Params.banner }}{{ . }}{{ else }}{{ "./banners/topic_covid.jpg" }}{{ end }}">
             <figcaption class="figure-caption font-italic" style="color: #55585a;">{{ .Page.Params.banner_caption }}</figcaption>
           </figure>
           <h6><a href="{{ .Page.RelPermalink }}">{{ .Name }}</a></h6>

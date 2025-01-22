@@ -6,7 +6,7 @@
   {{ range .RegularPages }}
   <div class="row border bg-light mb-3">
     <div class="col-md-4 p-3">
-      <img src="{{ .Params.banner }}" alt="{{ .Title }}">
+      <img src="{{ with .Page.Params.banner }}{{ . }}{{ else }}{{ "./banners/default_news.jpg" }}{{ end }}" alt="{{ .Title }}">
     </div>
     <div class="col-md-8">
       <h6><a href="{{ .RelPermalink }}">{{ .Title }}</a></h6>

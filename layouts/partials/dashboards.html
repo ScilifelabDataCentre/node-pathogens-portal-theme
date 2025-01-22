@@ -21,7 +21,7 @@
         <div class="bg-dashboard">
             <div aria-hidden="true">
                 <a href="{{ .Page.RelPermalink }}">
-                    <img class="img-fluid" src="{{ with .Page.Params.thumbnail }}{{ . }}{{ else }}{{ "/dashboards/internal_dash.jpg" }}{{ end }}"
+                    <img class="img-fluid" src="{{ with .Page.Params.banner }}{{ . }}{{ else }}{{ "/dashboards/internal_dash.jpg" }}{{ end }}"
                          alt="Thumbnail for {{ .Name }}">
                 </a>
             </div>
@@ -31,11 +31,13 @@
             <div class="px-2">
                 {{ .Page.Description }}
             </div>
-            <div class="px-2 pb-3">
-                {{ range (.Page.GetTerms "dashboards_topics") }}
-                <span class="topic_badge_small"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></span>
-                {{ end }}
-            </div>
+            {{ if not $displayed_in_homepage }}
+                <div class="px-2 pb-3">
+                    {{ range (.Page.GetTerms "dashboards_topics") }}
+                    <span class="topic_badge_small"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></span>
+                    {{ end }}
+                </div>
+            {{ end }}
         </div>
     </div>
     {{ end }}
