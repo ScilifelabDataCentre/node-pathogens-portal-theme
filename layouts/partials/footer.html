@@ -1,5 +1,5 @@
 <footer class="container border-top mt-5 mb-2">
-    <div class="row border-bottom py-3">
+    <div class="row border-bottom pt-3">
 
         <!-- About section -->
         <div class="col-md px-5 px-md-2">
@@ -24,9 +24,16 @@
             </div>
         </div>
 
-        <!-- Link to Github code -->
-        <div class="small mt-2 px-2">
-          <a target="_blank" href="{{ with .Site.Params.git_repository }}{{ . }}{{ end }}">Website code is available on Github <i class="bi bi-github"></i></a>
+        <div class="bg-light mt-2">
+            <!-- Website copyright -->
+            <div class="small mt-2">
+              The website content is licensed under the <a target="_blank" rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0 International License <i class="bi bi-cc-circle" style="vertical-align:text-top;"></i></a>
+            </div>
+
+            <!-- Link to Github code -->
+            <div class="small my-2">
+              The website code is licensed under the <a target="_blank" rel="license" href="https://opensource.org/license/mit">MIT license</a> and it is available on <a target="_blank" href="{{ with .Site.Params.git_repository }}{{ . }}{{ end }}">Github <i class="bi bi-github"></i></a>
+            </div>
         </div>
 
     </div>

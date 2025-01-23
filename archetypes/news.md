@@ -1,5 +1,8 @@
 ---
 title: 
 date: 
-thumbnail: 
+summary: 
+banner: 
+banner_large: 
+tags: []
 ---
