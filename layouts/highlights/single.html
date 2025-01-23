@@ -9,7 +9,7 @@
 <h2>{{ if .Params.title_full }}{{ .Params.title_full }}{{ else }}{{ .Title}}{{ end }}</h2>
 <p class="text-muted">Published: {{ .Date.Format "2006-01-02"}}</p>
 
-<figure class="figure float-md-end mx-2">
+<figure class="figure float-md-end mx-2" style="max-width: 50%;">
   <img src="{{ if (isset .Params "banner_large") }}{{ .Params.banner_large }}{{ else }}{{ .Params.banner }} {{ end }}" alt="{{ .Title }}" class="img-thumbnail">
   <figcaption class="figure-caption mt-1"><i>{{ .Params.banner_caption | markdownify }}</i></figcaption>
 </figure>
@@ -21,7 +21,7 @@
   <div class="col-md">
     <span><b>Topics: </b></span>
     {{ range (.GetTerms "highlights_topics") }}
-    <span class="topic_badge_small"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></span>
+    <span class="topic_badge"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></span>
     {{ end }}
   </div>
   <div class="col-md text-md-end mt-2 mt-md-0">

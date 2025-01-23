@@ -32,20 +32,18 @@
     <!-- Content on the left ends here -->
 
     <!-- Content on the right side, list of events -->
-     
     <div class="col-md-4 ms-auto p-3">
         <!-- Topics -->
-        <div class="bg-home-topics mb-4">
-            <h4 class="mt-0 mb-1">Pandemic preparedness topics</h4>
+        <div class="bg-home-topics mb-4 pb-2">
+            <h4 class="mt-0 mb-2">Topics</h4>
             <p class="mb-2 small">Click on one of the <b><a class="dark-blue" href="/topics/">topics</a></b> below to see only the content that is related to that topic.</p>
             {{ range where .Site.Menus.topics "Identifier" "ne" "all_topics" }}
               <a href="{{ .Page.RelPermalink }}"><span class="bg-home-topics-btn">{{ .Name }}</span></a>
             {{ end }}
-          </div>
-
+        </div>
         <!-- end Topics -->
 
-        <!-- Portal updates -->
+        <!-- News -->
         <div class="row">
             <h4 class="mb-1">What's new?</h4>
             <p class="mb-2 small">News about new sections, features, as well as significant milestones.</p>
@@ -67,6 +65,8 @@
             </div>
             </div>
         </div>
+        <!-- News ends here -->
+
         <!-- Events -->
         {{ $upcoming_events := slice }}
         {{ range sort $.Site.Data.events ".date_start" "asc" }}
@@ -84,9 +84,7 @@
                             <div>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
-                                        <h6>
-                                            <a href="{{ .event_url }}">{{ .title }}</a>
-                                        </h6>
+                                        <a href="{{ .event_url }}">{{ .title }}</a>
                                     </div>
                                     <div>
                                         <div class="px-2 py-1 d-flex flex-column rounded card-badge mw-100">
@@ -109,7 +107,9 @@
                 </div>
             </div>
         </section>
+        <!-- events code ends here -->
     </div>
+    <!-- content on the right ends here -->
 </div>
 
 {{ end }}

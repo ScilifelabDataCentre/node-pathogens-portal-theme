@@ -28,6 +28,28 @@ a.dark-blue:hover {
     text-decoration: underline;
 }
 
+h2 {
+    margin-top: 2rem;
+}
+
+h3 {
+    margin-top: 1.5rem;
+}
+
+h4 {
+    margin-top: 1rem;
+}
+
+h5,
+h6 {
+    margin-top: 0.5rem;
+}
+
+div > h2:first-of-type,
+aside > h5 {
+    margin-top: 0;
+}
+
 /* Vertical line for the homepage */
 
 @media all and (min-width: 992px) {
@@ -108,7 +130,7 @@ a.dark-blue:hover {
     text-decoration: none;
 }
   
-  /* For smaller device use reduced font size */
+/* For smaller device use reduced font size */
 @media (max-width: 767px) {
     .main_menu_item {
         font-size: 1.1em;
@@ -140,6 +162,16 @@ a.dark-blue:hover {
     background-repeat: no-repeat;
     background-size: cover;
     padding: 1.1rem 0;
+}
+
+/* Image styling */
+
+.topics-image {
+    margin-top: 0.5rem;
+}
+
+img {
+    max-width: 100%;
 }
 
 /* Breadcrumbs styling */
@@ -188,11 +220,29 @@ a.dark-blue:hover {
     color: white;
 }
 
-/* Background styling for cards and all */
+.topic_badge {
+  color: #fff;
+  background-color: #295986;
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 0.75em;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
 
-/*
-* Our own backgrounds
-*/
+.topic_badge a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Background styling for cards and all */
+/* Our own backgrounds */
 
 .bg-dashboard {
     height: 100%;
@@ -201,29 +251,29 @@ a.dark-blue:hover {
     border-width: 1px;
     border-style: solid;
     border-radius: 3px;
-  }
+}
   
-  .bg-dashboard:hover {
+.bg-dashboard:hover {
     box-shadow: 0px 0px 4px #55585a;
-  }
+}
   
-  .bg-dashboard-title {
+.bg-dashboard-title {
     background-color: #295986;
-  }
+}
   
-  .bg-dashboard-title a {
+.bg-dashboard-title a {
     color: #fff;
-  }
+}
 
-.bg-news {
+.bg-highlight {
     height: 100%;
     padding: 16px 10px 12px;
     background-color: #d8d8d8;
     border-radius: 3px;
 }
-  
-.bg-news:hover {
-    box-shadow: 0px 0px 3px #55585a;
+
+.bg-highlight:hover {
+  box-shadow: 0px 0px 3px #55585a;
 }
 
 .bg-see-all-link {
@@ -233,10 +283,6 @@ a.dark-blue:hover {
     text-align: center;
     font-size: 0.95rem;
 }
-
-.topics-image {
-    margin-top: 0.5rem;
-  }
 
 .bg-card {
     height: 100%;
@@ -248,39 +294,12 @@ a.dark-blue:hover {
     border-color: #ccc;
 }
 
-img {
-    max-width: 100%;
-  }
-  blockquote {
-    border-left: 5px solid rgba(46, 104, 165, 0.3);
-    padding-left: 1rem;
-    margin-left: 1rem;
-    color: #666;
-  }
-  
-  h2 {
-    margin-top: 2rem;
-  }
-  h3 {
-    margin-top: 1.5rem;
-  }
-  h4 {
-    margin-top: 1rem;
-  }
-  h5,
-  h6 {
-    margin-top: 0.5rem;
-  }
-  div > h2:first-of-type,
-aside > h5 {
-  margin-top: 0;
-}
-  .bg-home-topics {
+.bg-home-topics {
     padding: 12px 16px 4px;
     background-color: #d8d8d8;
-  }
+}
   
-  .bg-home-topics-btn {
+.bg-home-topics-btn {
     padding: 5px 10px;
     color: #fff;
     background-color: #4770b1;
@@ -288,95 +307,27 @@ aside > h5 {
     border-radius: 3px;
     margin: 0px 10px 12px 0px;
     display: inline-block;
-  }
+}
   
-  .bg-home-topics-btn:hover {
+.bg-home-topics-btn:hover {
     color: #1a1c1a;
     background-color: #d4de27;
-  }
+}
 
-  .topic_badge_small {
-    color: #fff;
-    background-color: #295986;
-    display: inline-block;
-    padding: 0.25em 0.4em;
-    font-size: 0.75em;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: 0.25rem;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  }
-  
-  .topic_badge_large {
-    color: #fff;
-    background-color: #295986;
-    display: inline-block;
-    padding: 0.25em 0.4em;
-    font-size: 0.95em;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: 0.25rem;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  }
-  
-  .topic_badge_small a,
-  .topic_badge_large a {
-    color: #fff;
-    text-decoration: none;
-  }
+/* Search */
+/* Search results area */
 
-  .bg-highlight {
-    height: 100%;
-    padding: 16px 10px 12px;
-    background-color: #d8d8d8;
-    border-radius: 3px;
-  }
-  
-  .bg-highlight:hover {
-    box-shadow: 0px 0px 3px #55585a;
-  }
-
-  /* Styling of dashboard cards filter items */
-.filter-dashboards-items label {
-    color: rgba(41, 89, 134, 0.85);
-    font-weight: 500;
-    cursor: pointer;
-  }
-  
-  .filter-dashboards-items label:hover {
-    color: rgba(41, 89, 134, 1);
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 6px;
-  }
-  
-  .filter-dashboards-items input:checked ~ label {
-    color: rgba(41, 89, 134, 1);
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 6px;
-  }
-
-  /* Search */
-/* search results area */
 #search-results {
     font-size: 1.175em;
     background-color: rgba(229, 229, 229, 0.5);
-  }
-  #search-results a:hover {
+}
+
+#search-results a:hover {
     font-size: 1.01em;
     transition: 0.1s;
     text-decoration: none;
-  }
+}
 
-  #search-results mark {
+#search-results mark {
     padding: 0;
-  }
+}

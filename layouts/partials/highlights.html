@@ -54,7 +54,7 @@
           {{ .Summary }}<br>
           <div class="mt-1">
             {{ range (.GetTerms "highlights_topics") }}
-              <span class="topic_badge_small"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></span>
+              <span class="topic_badge"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></span>
             {{ end }}
           </div>
         </div>
