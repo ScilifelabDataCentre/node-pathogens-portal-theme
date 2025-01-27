@@ -5,6 +5,12 @@
             <a href="/">
                 <img class="mt-1 me-lg-3" src="/img/pathogens_logo.svg" alt="Node Pathogens Portal">
             </a>
+
+            {{ if .Site.Params.node_logo }}
+            <a target="_blank" href="{{ .Site.Params.node_url }}" class="d-none d-lg-block">
+                <img class="px-2 py-lg-1" src="{{ relURL .Site.Params.node_logo }}" alt="Node Logo">
+            </a>
+            {{ end }}
         </div>
 
         <!-- Hamburger button, shows up only on smaller screen-->
@@ -36,7 +42,7 @@
                 <!-- Top nav list mobile version -->
                 <ul class="navbar-nav nav-top">
                     {{ range .Site.Menus.navbar_top }}
-                    <li class="nav-item"><a class="nav-link" href="{{ .Page.RelPermalink }}">{{ .Name }}</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ .Page.RelPermalink }}">{{ .Name | safeHTML }}</a></li>
                     {{ end }}
                 </ul>
                 <hr>

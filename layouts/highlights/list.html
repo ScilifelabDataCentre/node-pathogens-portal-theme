@@ -26,7 +26,6 @@
 <script>  
   // Function to filter the service based on search text
   $("input[type=text]").on("input", function(){
-    
     // Get the text entered and service category 
     var searchText = $(this).val().toLowerCase();
     var searchArea = this.getAttribute('data-search-area');
@@ -40,7 +39,6 @@
       $(`div#highlights_container div.data-highlight`).show();
     } else {
       $(`div#highlights_container div[data-search-tags*='${searchText}']`).show();
-      
       // Display a message if no services available for given keyword
       var visible_services = $(`div#highlights_container div.data-highlight`).filter(":visible");
       if (!visible_services.length) {
