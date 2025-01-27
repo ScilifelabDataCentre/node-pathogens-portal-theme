@@ -26,5 +26,5 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/7.0.0/fuse.min.js"></script>
 {{ $seach_js := resources.Get "search.js" | minify | fingerprint }}
-<script src="{{ $seach_js.Permalink }}"></script>
+<script src="{{ $seach_js.RelPermalink }}"></script>
 {{ end }}

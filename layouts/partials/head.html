@@ -31,7 +31,7 @@
 
     <!-- Portal main CSS -->
     {{ $portal_css := resources.Get "main.css" | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $portal_css.Permalink }}">
+    <link rel="stylesheet" href="{{ $portal_css.RelPermalink }}">
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" 
