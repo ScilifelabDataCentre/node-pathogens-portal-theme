@@ -201,6 +201,32 @@ img {
     padding: 0px 5px;
 }
 
+/* Styling related Publications page */
+.nav-pub {
+    color: #4770b1;
+    padding: 0.1em 0;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.nav-pub:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.nav-pub.active {
+    color: #1a1c1a;
+    pointer-events: none;
+}
+
+.pub-table {
+    display: none;
+}
+
+.pub-table.active {
+    display: block;
+}
+
 /* Styling of buttons */
 
 .btn-blue {
