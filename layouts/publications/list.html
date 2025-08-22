@@ -125,8 +125,8 @@
 
                 const textDiv = document.createElement("div");
                 textDiv.classList.add("pb-3");
-                textDiv.innerHTML = `The following are 10 most recent publications for <code style="text-transform: capitalize">
-                                    ${pubCat}</code>, to see all the available publications visit 
+                textDiv.innerHTML = `Below are the 10 most recent national publications for <code style="text-transform: capitalize">
+                                    ${pubCat}</code>, to see more please visit 
                                     <a target="_bank" href="${getQueryURL(pubCat)}">Europe PMC</a>`;
                 tableDiv.appendChild(textDiv);
 
@@ -170,8 +170,8 @@
                 const noPubText = document.createElement("p");
                 noPubText.id = "no-pub-text";
                 noPubText.style.textAlign = "center";
-                noPubText.innerHTML = `No publications were retireved for <code style="text-transform: capitalize">
-                                        ${pubCat}</code>, notify portal team.`;
+                noPubText.innerHTML = `Unable to retrieve publications for <code style="text-transform: capitalize">
+                                        ${pubCat}</code>, please report this to the portal team.`;
                 pubContainer.appendChild(noPubText);
             }
         }
