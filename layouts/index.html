@@ -6,27 +6,31 @@
      <!-- Content on the left side Dashboard, News, etc -->
      <div class="col-md-8 vert-line-right mt-3">
         
-         <!-- Dashboards -->
-         <div class="row ">
-             <div class="col">
-                 <h3 class="mt-0">Data Dashboard</h3>
-             </div>
-             <div class="col mt-2 pt-1 text-end see-all-link-text">
-                 <a href="/dashboards/">See all dashboards <i class="bi bi-arrow-right-square-fill"></i></a>
-             </div>
-         </div>
-         {{ partial "dashboards.html" . }}
+        <!-- Dashboards -->
+        {{ if .Site.GetPage "section" "dashboards" }}
+        <div class="row ">
+            <div class="col">
+                <h3 class="mt-0">Data Dashboard</h3>
+            </div>
+            <div class="col mt-2 pt-1 text-end see-all-link-text">
+                <a href="/dashboards/">See all dashboards <i class="bi bi-arrow-right-square-fill"></i></a>
+            </div>
+        </div>
+        {{ partial "dashboards.html" . }}
+        {{ end }}
 
-         <!-- News and data highlights -->
-         <div class="row mt-4 mb-2">
-             <div class="col">
-                 <h3 class="mt-0">Data Highlights</h3>
-             </div>
-             <div class="col mt-2 pt-1 text-end see-all-link-text">
-                 <a href="/highlights/">See all Data highlights <i class="bi bi-arrow-right-square-fill"></i></a>
-             </div>
-         </div>
-         {{ partial "highlights.html" . }}
+        <!-- News and data highlights -->
+        {{ if .Site.GetPage "section" "highlights" }}
+        <div class="row mt-4 mb-2">
+            <div class="col">
+                <h3 class="mt-0">Data Highlights</h3>
+            </div>
+            <div class="col mt-2 pt-1 text-end see-all-link-text">
+                <a href="/highlights/">See all Data highlights <i class="bi bi-arrow-right-square-fill"></i></a>
+            </div>
+        </div>
+        {{ partial "highlights.html" . }}
+        {{ end }}
         
     </div>
     <!-- Content on the left ends here -->
@@ -34,6 +38,7 @@
     <!-- Content on the right side, list of events -->
     <div class="col-md-4 ms-auto p-3">
         <!-- Topics -->
+        {{ if .Site.GetPage "section" "topics" }}
         <div class="bg-home-topics mb-4 pb-2">
             <h4 class="mt-0 mb-2">Topics</h4>
             <p class="mb-2 small">Click on one of the <b><a class="dark-blue" href="/topics/">topics</a></b> below to see only the content that is related to that topic.</p>
@@ -41,9 +46,11 @@
               <a href="{{ .Page.RelPermalink }}"><span class="bg-home-topics-btn">{{ .Name }}</span></a>
             {{ end }}
         </div>
+        {{ end }}
         <!-- end Topics -->
 
         <!-- News -->
+        {{ if .Site.GetPage "section" "news" }}
         <div class="row">
             <h4 class="mb-1">What's new?</h4>
             <p class="mb-2 small">News about new sections, features, as well as significant milestones.</p>
@@ -65,9 +72,11 @@
             </div>
             </div>
         </div>
+        {{ end }}
         <!-- News ends here -->
 
         <!-- Events -->
+        {{ if .Site.GetPage "section" "events" }}
         {{ $upcoming_events := slice }}
         {{ range sort $.Site.Data.events ".date_start" "asc" }}
             {{ if ge (.date_start | time.Format "20060102") (now | time.Format "20060102") }}
@@ -107,6 +116,7 @@
                 </div>
             </div>
         </section>
+        {{ end }}
         <!-- events code ends here -->
     </div>
     <!-- content on the right ends here -->
